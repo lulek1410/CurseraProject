@@ -1,8 +1,12 @@
-import "./styles/Nav.css";
+import "./../styles/components/Nav.css";
 
 export default function Nav(props) {
 	const { orientation, gap } = props;
-	const style = { flexDirection: orientation, gap: gap };
+	const style = {
+		flexDirection: orientation,
+		gap: gap,
+		alignItems: orientation ? "start" : "center",
+	};
 
 	return (
 		<>

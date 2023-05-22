@@ -1,0 +1,21 @@
+#main-nav-list {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: row;
+	column-gap: 4vw;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+@media (width <= 600px) {
+	#main-nav-list {
+		flex-wrap: wrap;
+	}
+}

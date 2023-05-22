@@ -1,8 +1,8 @@
-import "./styles/Header.css";
+import "./../styles/sections/Header.css";
 
-import logo from "./assets/Logo.svg";
+import logo from "./../assets/Logo.svg";
 
-import Nav from "./Nav";
+import Nav from "./../components/Nav";
 
 export default function Header() {
 	return (
