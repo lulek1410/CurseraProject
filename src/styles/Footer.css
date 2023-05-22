@@ -1,0 +1,28 @@
+footer {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	position: fixed;
+	bottom: 2rem;
+	left: 2rem;
+	right: 2rem;
+	padding-top: 2rem;
+	gap: 9rem;
+	border-top: 0.15rem solid red;
+}
+
+div:nth-child(1) {
+	margin: auto 0;
+}
+
+div > h1 {
+	font-size: 1.5rem;
+	font-family: "Markazi Text";
+	margin-bottom: 0.5rem;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

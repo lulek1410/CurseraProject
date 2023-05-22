@@ -1,0 +1,14 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--font-primary: Karla;
+	--font-secondary: "Markazi Text";
+}
+
+body {
+	padding: 6rem 2rem 0 2rem;
+	font-family: Karla;
+}
