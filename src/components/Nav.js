@@ -1,4 +1,4 @@
-import "./../styles/components/Nav.css";
+import "../styles/components/Nav.css";
 
 export default function Nav(props) {
 	const { orientation, gap } = props;
@@ -6,6 +6,13 @@ export default function Nav(props) {
 		flexDirection: orientation,
 		gap: gap,
 		alignItems: orientation ? "start" : "center",
+	};
+
+	const scrollToAbout = () => {
+		const element = document.getElementById("about");
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
 	};
 
 	return (
@@ -16,7 +23,14 @@ export default function Nav(props) {
 						<a href="">Home</a>
 					</li>
 					<li>
-						<a href="">About</a>
+						<a
+							href="/#about"
+							onClick={() => {
+								scrollToAbout();
+							}}
+						>
+							About
+						</a>
 					</li>
 					<li>
 						<a href="">Menu</a>

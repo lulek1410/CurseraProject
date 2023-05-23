@@ -1,0 +1,16 @@
+button {
+	cursor: pointer;
+	background-color: var(--color-main-y);
+	font-size: 1rem;
+	font-family: Karla;
+	border: none;
+	transition: box-shadow 150ms;
+}
+
+button:hover {
+	box-shadow: 0 0.5rem 1rem rgba(70, 70, 70, 0.3);
+}
+
+button:active {
+	background-color: rgb(192, 162, 14);
+}

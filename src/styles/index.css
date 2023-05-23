@@ -7,48 +7,22 @@
 	--border-radius: 16px;
 	--color-main-y: #f4ce14;
 	--color-main-g: #495e57;
+	--color-secondary: #333333;
+}
+
+html {
+	scroll-behavior: smooth;
+	/* font-size: calc(15px + 0.390625vw); */
+}
+
+html,
+section {
+	font-size: calc(15px + 0.390625vw);
 }
 
 body {
 	padding: 6rem 2rem 0 2rem;
 	font-family: Karla;
-	font-size: calc(15px + 0.390625vw);
-}
-
-button {
-	cursor: pointer;
-	background-color: var(--color-main-y);
-	font-size: 1rem;
-	font-family: Karla;
-	border: none;
-}
-
-:is(h1, h2, h3) {
-	font-family: "Markazi Text";
-}
-
-:is(h1, h2, p) {
-	font-weight: 400;
-}
-
-h1 {
-	font-size: 4rem;
-}
-
-h2 {
-	font-size: 3rem;
-}
-
-h3 {
-	font-size: 1.8rem;
-	font-weight: 600;
-}
-
-p {
-	font-size: 1rem;
-	line-height: 24px;
-	letter-spacing: 0.5px;
-	max-width: 32em;
 }
 
 @media (width <= 850px) {

@@ -1,0 +1,28 @@
+:is(h1, h2, h3) {
+	font-family: "Markazi Text";
+}
+
+:is(h1, h2, p) {
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+p {
+	color: var(--color-secondary);
+	line-height: 24px;
+	letter-spacing: 0.3px;
+	max-width: 32em;
+}

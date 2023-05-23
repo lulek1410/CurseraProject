@@ -1,0 +1,14 @@
+.restaurant-description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #495e57;
+	margin: 0 -2rem;
+	padding: 2rem 1rem;
+	gap: 3vw;
+	color: white;
+}
+
+.color-main-y {
+	color: var(--color-main-y);
+}

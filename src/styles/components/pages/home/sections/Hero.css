@@ -1,0 +1,38 @@
+#hero {
+	padding: 2rem 0;
+}
+
+#hero > div {
+	margin-left: 5vw;
+}
+
+#hero img {
+	width: 40vw;
+	height: max(20vw, 30vh);
+	border-radius: var(--border-radius);
+	object-fit: cover;
+	margin: 0 5vw;
+}
+
+#hero h2 {
+	margin: 0 0 1rem 0;
+}
+
+#hero p {
+	color: white;
+}
+
+#hero button {
+	margin-top: 3rem;
+	padding: 0.7rem 1rem;
+}
+
+#hero button:hover {
+	box-shadow: 0 0.5rem 1rem rgb(45, 45, 45);
+}
+
+@media (width < 600px) {
+	#hero img {
+		display: none;
+	}
+}

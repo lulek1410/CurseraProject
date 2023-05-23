@@ -1,0 +1,40 @@
+footer {
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	margin: 2rem 0;
+	gap: 5vw;
+	border-top: 0.15rem solid #ee9972;
+}
+
+#contact-social-container {
+	display: flex;
+	justify-content: center;
+	gap: 5vw;
+}
+
+#logo-container {
+	margin: auto 0;
+}
+
+#footer-logo {
+	width: min(5rem, 24vw);
+}
+
+footer h3 {
+	font-family: "Markazi Text";
+	margin-bottom: 0.5rem;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+@media (width <= 600px) {
+	#contact-social-container {
+		flex-direction: column;
+		gap: 4vw;
+	}
+}

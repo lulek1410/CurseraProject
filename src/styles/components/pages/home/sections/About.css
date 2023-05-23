@@ -1,0 +1,37 @@
+#about {
+	margin-top: 5vh;
+	/* padding: 2rem 0; */
+}
+
+#about p {
+	max-width: 26em;
+	color: white;
+}
+
+#chefs-images img {
+	height: min(34vh, 34vw);
+	aspect-ratio: 15 / 20;
+	object-fit: cover;
+	border-radius: 16px;
+	box-shadow: 1vw 1vh 2vh rgb(70, 70, 70);
+}
+
+#chefs-images {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#chefs-images img:first-child {
+	transform: translate(10%, 5%);
+}
+
+#chefs-images img:last-child {
+	transform: translate(-10%, -5%);
+}
+
+@media (width <= 675px) {
+	#chefs-images img {
+		display: none;
+	}
+}
