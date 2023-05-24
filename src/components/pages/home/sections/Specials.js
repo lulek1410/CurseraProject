@@ -42,7 +42,7 @@ export default function Specials() {
 					{specialDishes.map((dish) => {
 						return (
 							<Dish
-								key={dish}
+								key={dish.name}
 								dishName={dish.name}
 								description={dish.description}
 								price={dish.price}

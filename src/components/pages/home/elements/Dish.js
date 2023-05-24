@@ -8,7 +8,7 @@ export default function Dish(props) {
 			<div id="dish">
 				<div>
 					<img src={image} alt="dish" loading="lazy" />
-					<div class="info">
+					<div className="info">
 						<h3>{dishName}</h3>
 						<p>{price}</p>
 					</div>

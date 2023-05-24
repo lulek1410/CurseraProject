@@ -14,15 +14,14 @@
 
 #dishes {
 	display: grid;
-	grid-auto-flow: column;
+	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
-	justify-content: space-evenly;
 	align-items: center;
 }
 
 @media (width <= 600px) {
 	#dishes {
-		grid-auto-flow: row;
-		gap: 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
 	}
 }

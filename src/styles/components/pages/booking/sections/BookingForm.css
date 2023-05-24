@@ -1,0 +1,36 @@
+form {
+	display: grid;
+	grid-auto-flow: row;
+	row-gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 2rem 0;
+}
+
+form div {
+	display: grid;
+	grid-auto-flow: row;
+}
+
+input {
+	border: none;
+	outline: none;
+	padding: 0.2rem;
+	background-color: #edefee;
+}
+
+div + input {
+	margin-top: 1.5rem;
+}
+
+:is(#time, #ocasion) {
+	border-radius: 2px;
+	padding: 0.2rem;
+	border-color: #edefee;
+	background-color: #edefee;
+}
+
+form button {
+	padding: 0.8rem;
+}

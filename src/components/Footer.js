@@ -4,7 +4,11 @@ import logo from "../assets/footer-logo.png";
 
 import Nav from "./Nav";
 
-const contactInfo = ["Adress", "Phone number", "Email"];
+const contactInfo = [
+	"2345 Maldove Way, Chicago Illinois",
+	"(532)-659-8914",
+	"info@littlelemon.com",
+];
 const socialMedia = ["Facebook", "Instagram", "Twitter"];
 
 export default function Footer() {
@@ -15,7 +19,7 @@ export default function Footer() {
 					<img id="footer-logo" src={logo} alt="logo" />
 				</div>
 				<div>
-					<h3>Doormat Navigation</h3>
+					<h3>Navigation</h3>
 					<Nav orientation="column" gap="0.5rem" />
 				</div>
 				<div id="contact-social-container">
@@ -24,11 +28,7 @@ export default function Footer() {
 						<nav>
 							<ul>
 								{contactInfo.map((name) => {
-									return (
-										<li key={name}>
-											<a href="">{name}</a>
-										</li>
-									);
+									return <li key={name}>{name}</li>;
 								})}
 							</ul>
 						</nav>

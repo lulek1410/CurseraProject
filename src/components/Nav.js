@@ -1,5 +1,7 @@
 import "../styles/components/Nav.css";
 
+import { Link } from "react-router-dom";
+
 export default function Nav(props) {
 	const { orientation, gap } = props;
 	const style = {
@@ -20,7 +22,7 @@ export default function Nav(props) {
 			<nav>
 				<ul id="main-nav-list" style={style}>
 					<li>
-						<a href="">Home</a>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
 						<a
@@ -33,16 +35,16 @@ export default function Nav(props) {
 						</a>
 					</li>
 					<li>
-						<a href="">Menu</a>
+						<Link to="/">Menu</Link>
 					</li>
 					<li>
-						<a href="">Reservations</a>
+						<Link to="/booking">Reservations</Link>
 					</li>
 					<li>
-						<a href="">Order Online</a>
+						<Link href="">Order Online</Link>
 					</li>
 					<li>
-						<a href="">Login</a>
+						<Link href="">Login</Link>
 					</li>
 				</ul>
 			</nav>

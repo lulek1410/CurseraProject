@@ -43,7 +43,7 @@ export default function Testimonials() {
 			{opinions.map((opinion) => {
 				return (
 					<Testimonial
-						key={opinion.userName}
+						key={opinion.author}
 						userName={opinion.author}
 						text={opinion.text}
 					/>

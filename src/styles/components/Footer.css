@@ -1,10 +1,13 @@
 footer {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	padding-top: 2rem;
-	margin: 2rem 0;
+	padding: 2rem;
+	margin: 0 -2rem;
 	gap: 5vw;
-	border-top: 0.15rem solid #ee9972;
+	/* border-top: 0.15rem solid #ee9972; */
+	background-color: #fbdabb;
 }
 
 #contact-social-container {
@@ -36,5 +39,15 @@ ul {
 	#contact-social-container {
 		flex-direction: column;
 		gap: 4vw;
+	}
+}
+
+@media (width < 420px) {
+	footer {
+		flex-direction: column;
+	}
+
+	#logo-container {
+		margin: auto;
 	}
 }
