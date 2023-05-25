@@ -1,7 +1,6 @@
 button {
 	cursor: pointer;
 	background-color: var(--color-main-y);
-	font-size: 1rem;
 	font-family: Karla;
 	border: none;
 	transition: box-shadow 150ms;
