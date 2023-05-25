@@ -1,7 +1,15 @@
 #booking-title {
 	text-align: center;
+	background-image: url("../../../../assets/restaurant.jpg");
+	background-position: 0 -80%;
 	background-color: var(--color-main-g);
 	margin: 0 calc(var(--spacing) * -1);
-	padding: 3rem 0;
+	padding: 5rem 0;
 	color: var(--color-main-y);
+}
+
+#booking-title h1 {
+	background-color: var(--color-main-g);
+	display: inline-block;
+	padding: var(--spacing-small);
 }

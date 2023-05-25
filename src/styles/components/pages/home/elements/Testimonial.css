@@ -1,5 +1,5 @@
 #testimonial {
-	background-color: #edefee;
+	background-color: var(--color-secondary);
 	padding: var(--spacing-small) var(--spacing);
 }
 

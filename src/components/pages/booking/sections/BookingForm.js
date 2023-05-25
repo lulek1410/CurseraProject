@@ -27,7 +27,7 @@ export default function BookingForm(props) {
 			phoneNumber: "",
 			numberOfPeople: 1,
 			date: minDate,
-			time: "",
+			time: availableTime[0],
 			ocasion: "None",
 		},
 		onSubmit: (values, helpers) => {
@@ -181,7 +181,7 @@ export default function BookingForm(props) {
 					</p>
 				</div>
 				<button
-					disabled={!formik.isValid}
+					disabled={!(formik.isValid && formik.dirty)}
 					type="submit"
 					name="submit reservation"
 				>
