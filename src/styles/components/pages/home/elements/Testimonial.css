@@ -1,6 +1,6 @@
 #testimonial {
 	background-color: #edefee;
-	padding: 1rem 2rem;
+	padding: var(--spacing-small) var(--spacing);
 }
 
 #testimonial img {
@@ -10,5 +10,5 @@
 
 #user-name {
 	font-weight: bold;
-	margin-bottom: 1rem;
+	margin-bottom: var(--spacing-small);
 }

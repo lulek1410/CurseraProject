@@ -1,7 +1,6 @@
-import "../../../../styles/components/pages/home/sections/Hero.css";
-import "../../../../styles/common/common.css";
+import "@home_s/sections/Hero.css";
 
-import restaurantFood from "../../../../assets/restaurantfood.jpg";
+import restaurantFood from "@assert/restaurantfood.jpg";
 
 export default function Hero() {
 	return (

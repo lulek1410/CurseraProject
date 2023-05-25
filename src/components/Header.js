@@ -1,6 +1,6 @@
-import "../styles/components/Header.css";
+import "@components_s/Header.css";
 
-import logo from "../assets/Logo.svg";
+import logo from "@assert/Logo.svg";
 
 import Nav from "./Nav";
 import { Link } from "react-router-dom";

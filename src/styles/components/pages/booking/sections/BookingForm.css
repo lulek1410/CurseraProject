@@ -1,11 +1,11 @@
 form {
 	display: grid;
 	grid-template-columns: 1fr 6rem 6rem 1fr;
-	row-gap: 1rem;
+	row-gap: var(--spacing-small);
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin: 2rem 0;
+	margin: var(--spacing) 0;
 }
 
 form div {
@@ -24,7 +24,7 @@ input {
 	border: none;
 	outline: none;
 	padding: 0.2rem;
-	background-color: #edefee;
+	background-color: var(--color-seconday);
 	border-radius: 6px;
 }
 

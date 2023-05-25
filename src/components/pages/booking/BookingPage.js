@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import "../../../styles/components/pages/booking/BookingPage.css";
+import "@booking_s/BookingPage.css";
 import fetchBookingData from "./scripts/BookingApi";
 
 import BookingForm from "./sections/BookingForm";

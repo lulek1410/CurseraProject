@@ -2,9 +2,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #495e57;
-	margin: 0 -2rem;
-	padding: 2rem 1rem;
+	background-color: var(--color-main-g);
+	margin: 0 calc(var(--spacing) * -1);
+	padding: var(--spacing) var(--spacing-small);
 	gap: 3vw;
 	color: white;
 }

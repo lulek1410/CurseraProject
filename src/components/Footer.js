@@ -1,6 +1,6 @@
-import "../styles/components/Footer.css";
+import "@components_s/Footer.css";
 
-import logo from "../assets/footer-logo.png";
+import logo from "@assert/footer-logo.png";
 
 import Nav from "./Nav";
 import { Link } from "react-router-dom";

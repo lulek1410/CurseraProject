@@ -7,7 +7,10 @@
 	--border-radius: 16px;
 	--color-main-y: #f4ce14;
 	--color-main-g: #495e57;
-	--color-secondary: #333333;
+	--color-secondary: #edefee;
+	--color-secondary-text: #333333;
+	--spacing: 2rem;
+	--spacing-small: 1rem;
 }
 
 html {
@@ -20,7 +23,7 @@ section {
 }
 
 body {
-	padding: 4rem 2rem 0 2rem;
+	padding: calc(var(--spacing) * 2) var(--spacing) 0 var(--spacing);
 	font-family: Karla;
 }
 

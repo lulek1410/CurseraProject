@@ -1,7 +1,7 @@
-import "../../../../styles/components/pages/home/sections/About.css";
+import "@home_s/sections/About.css";
 
-import chef from "../../../../assets/chef.jpg";
-import chefs from "../../../../assets/chefs.jpg";
+import chef from "@assert/chef.jpg";
+import chefs from "@assert/chefs.jpg";
 
 export default function About() {
 	return (

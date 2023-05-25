@@ -1,4 +1,4 @@
-import "../../../../styles/components/pages/booking/elements/ValidationError.css";
+import "@booking_s/elements/ValidationError.css";
 
 export default function ValidationError(props) {
 	const { isInvalid, error } = props;

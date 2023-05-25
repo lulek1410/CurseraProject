@@ -1,4 +1,4 @@
-import "../styles/components/Nav.css";
+import "@components_s/Nav.css";
 
 import { Link } from "react-router-dom";
 

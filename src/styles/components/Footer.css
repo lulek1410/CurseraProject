@@ -2,11 +2,10 @@ footer {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	padding-top: 2rem;
-	padding: 2rem;
-	margin: 0 -2rem;
+	padding-top: var(--spacing);
+	padding: var(--spacing);
+	margin: 0 calc(var(--spacing) * -1);
 	gap: 5vw;
-	/* border-top: 0.15rem solid #ee9972; */
 	background-color: #fbdabb;
 }
 
@@ -26,7 +25,7 @@ footer {
 
 footer h3 {
 	font-family: "Markazi Text";
-	margin-bottom: 0.5rem;
+	margin-bottom: calc(var(--spacing-small) / 2);
 }
 
 ul {

@@ -8,7 +8,8 @@ button {
 }
 
 button:hover {
-	box-shadow: 0 0.5rem 1rem rgba(70, 70, 70, 0.3);
+	box-shadow: 0 calc(var(--spacing-small) / 2) var(--spacing-small)
+		rgba(70, 70, 70, 0.3);
 }
 
 button:active {

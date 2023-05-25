@@ -1,4 +1,4 @@
-import "../../../../styles/components/pages/home/sections/Testimonials.css";
+import "@home_s/sections/Testimonials.css";
 
 import Testimonial from "../elements/Testimonial";
 

@@ -1,8 +1,8 @@
-import "../../../../styles/components/pages/home/sections/Specials.css";
+import "@home_s/sections/Specials.css";
 
-import greekSalad from "../../../../assets/greek salad.jpg";
-import bruschetta from "../../../../assets/bruschetta.svg";
-import lemonDessert from "../../../../assets/lemon dessert.jpg";
+import greekSalad from "@assert/greek salad.jpg";
+import bruschetta from "@assert/bruschetta.svg";
+import lemonDessert from "@assert/lemon dessert.jpg";
 
 import Dish from "../elements/Dish";
 

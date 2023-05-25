@@ -12,7 +12,7 @@ li {
 
 a {
 	position: relative;
-	color: var(--color-secondary);
+	color: var(--color-secondary-text);
 }
 
 a::before {

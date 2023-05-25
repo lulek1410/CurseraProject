@@ -1,6 +1,6 @@
-import "../../../../styles/components/pages/home/elements/Testimonial.css";
+import "@home_s/elements/Testimonial.css";
 
-import stars from "../../../../assets/stars.png";
+import stars from "@assert/stars.png";
 
 export default function Testimonial(props) {
 	const { userName, text } = props;

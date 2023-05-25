@@ -1,4 +1,4 @@
-import "../../../../styles/components/pages/booking/sections/BookingForm.css";
+import "@booking_s/sections/BookingForm.css";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";

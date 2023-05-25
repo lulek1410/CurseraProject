@@ -21,7 +21,7 @@ h3 {
 }
 
 p {
-	color: var(--color-secondary);
+	color: var(--color-secondary-text);
 	line-height: 24px;
 	letter-spacing: 0.3px;
 	max-width: 32em;

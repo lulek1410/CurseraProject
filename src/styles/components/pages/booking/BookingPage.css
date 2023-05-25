@@ -1,7 +1,7 @@
 #booking-title {
 	text-align: center;
 	background-color: var(--color-main-g);
-	margin: 0 -2rem;
+	margin: 0 calc(var(--spacing) * -1);
 	padding: 3rem 0;
 	color: var(--color-main-y);
 }

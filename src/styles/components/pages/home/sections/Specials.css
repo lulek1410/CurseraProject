@@ -1,11 +1,11 @@
 #specials {
-	margin: 2rem 0;
+	margin: var(--spacing) 0;
 }
 
 #title {
 	display: flex;
 	justify-content: space-between;
-	margin: 2rem 0;
+	margin: var(--spacing) 0;
 }
 
 #title button {
@@ -15,7 +15,7 @@
 #dishes {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1rem;
+	gap: var(--spacing-small);
 	align-items: center;
 }
 

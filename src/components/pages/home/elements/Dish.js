@@ -1,4 +1,4 @@
-import "../../../../styles/components/pages/home/elements/Dish.css";
+import "@home_s/elements/Dish.css";
 
 export default function Dish(props) {
 	const { dishName, description, price, image } = props;

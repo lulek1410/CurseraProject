@@ -17,7 +17,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0.8rem 1rem;
+	margin: 0.8rem var(--spacing-small);
 }
 
 .info p {
@@ -25,12 +25,12 @@
 }
 
 #dish > div > p {
-	margin: 0 1rem;
+	margin: 0 var(--spacing-small);
 }
 
 #dish button {
 	padding: 0.8rem;
-	margin-top: 2rem;
+	margin-top: var(--spacing);
 }
 
 @media (width <= 800px) {
