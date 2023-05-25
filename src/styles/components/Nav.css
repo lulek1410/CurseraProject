@@ -29,7 +29,7 @@ a::before {
 	transition: transform 0.2s ease-in-out;
 }
 
-a:hover::before {
+a:not(.image-link):hover::before {
 	transform-origin: left;
 	transform: scaleX(1);
 }

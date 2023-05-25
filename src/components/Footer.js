@@ -3,20 +3,27 @@ import "../styles/components/Footer.css";
 import logo from "../assets/footer-logo.png";
 
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 const contactInfo = [
 	"2345 Maldove Way, Chicago Illinois",
 	"(532)-659-8914",
 	"info@littlelemon.com",
 ];
-const socialMedia = ["Facebook", "Instagram", "Twitter"];
+const socialMedia = [
+	{ name: "Facebook", link: "https://www.facebook.com" },
+	{ name: "Instagram", link: "https://www.instagram.com" },
+	{ name: "Twitter", link: "https://twitter.com" },
+];
 
 export default function Footer() {
 	return (
 		<>
 			<footer>
 				<div id="logo-container">
-					<img id="footer-logo" src={logo} alt="logo" />
+					<Link className="image-link" to="/">
+						<img id="footer-logo" src={logo} alt="logo" />
+					</Link>
 				</div>
 				<div>
 					<h3>Navigation</h3>
@@ -37,10 +44,10 @@ export default function Footer() {
 						<h3>Social Media</h3>
 						<nav>
 							<ul>
-								{socialMedia.map((name) => {
+								{socialMedia.map((social) => {
 									return (
-										<li key={name}>
-											<a href="">{name}</a>
+										<li key={social.name}>
+											<a href={social.link}>{social.name}</a>
 										</li>
 									);
 								})}

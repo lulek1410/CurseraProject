@@ -2,31 +2,23 @@ import "../../../../styles/components/pages/booking/sections/BookingForm.css";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { minDate, maxDate } from "../scripts/DateLimits";
+import { useState } from "react";
+import ValidationError from "../elements/ValidationError";
 
-const getMinDate = () => {
-	const minDate = new Date();
-	minDate.setDate(minDate.getDate() + 1);
-	const month =
-		minDate.getMonth() < 9
-			? `0${minDate.getMonth() + 1}`
-			: minDate.getMonth() + 1;
-	return `${minDate.getFullYear()}-${month}-${minDate.getDate()}`;
-};
+export default function BookingForm(props) {
+	const { availableTime, updateTime } = props;
 
-const getMaxDate = () => {
-	const minDate = new Date();
-	minDate.setDate(minDate.getDate() + 70);
-	const month =
-		minDate.getMonth() < 9
-			? `0${minDate.getMonth() + 1}`
-			: minDate.getMonth() + 1;
-	return `${minDate.getFullYear()}-${month}-${minDate.getDate()}`;
-};
+	const createTimeOptionsComponent = () => {
+		return availableTime.map((time) => {
+			return <option key={time}>{time}</option>;
+		});
+	};
 
-const minDate = getMinDate();
-const maxDate = getMaxDate();
+	const [availableTimeComponent, setAvailableTimeComponent] = useState(
+		createTimeOptionsComponent()
+	);
 
-export default function BookingForm() {
 	const formik = useFormik({
 		initialValues: {
 			name: "",
@@ -35,7 +27,7 @@ export default function BookingForm() {
 			phoneNumber: "",
 			numberOfPeople: 1,
 			date: minDate,
-			time: "17:00",
+			time: "",
 			ocasion: "None",
 		},
 		onSubmit: (values, helpers) => {
@@ -51,60 +43,87 @@ export default function BookingForm() {
 				"Phone number not valid"
 			),
 			numberOfPeople: Yup.number().max(10).min(1),
-			date: Yup.date().required("Required"),
 		}),
 	});
 
+	const updateAvailableTimeComponent = (value) => {
+		updateTime({ date: value });
+		setAvailableTimeComponent(createTimeOptionsComponent());
+	};
+
 	const isInvalid = (property) => {
 		return formik.touched[property] && formik.errors[property];
+	};
+
+	const invalidStyle = (propertyName) => {
+		return {
+			backgroundColor: isInvalid(propertyName) && "rgb(255, 185, 185)",
+		};
 	};
 
 	return (
 		<>
 			<form onSubmit={formik.handleSubmit}>
 				<div>
-					<label for="name">First Name</label>
+					<label htmlFor="name">First Name</label>
 					<input
+						style={invalidStyle("name")}
 						type="text"
 						id="name"
 						name="name"
 						{...formik.getFieldProps("name")}
 					/>
-					{isInvalid("name") ? <p>{formik.errors.name}</p> : null}
+					<ValidationError
+						isInvalid={isInvalid("name")}
+						error={formik.errors.name}
+					/>
 				</div>
 				<div>
-					<label for="surname">Surname</label>
+					<label htmlFor="surname">Surname</label>
 					<input
+						style={invalidStyle("surname")}
 						type="text"
 						id="surname"
 						name="surname"
 						{...formik.getFieldProps("surname")}
 					/>
-					{isInvalid("surname") ? <p>{formik.errors.surname}</p> : null}
+					<ValidationError
+						isInvalid={isInvalid("surname")}
+						error={formik.errors.surname}
+					/>
 				</div>
 				<div>
-					<label for="email">Email</label>
+					<label htmlFor="email">Email</label>
 					<input
+						style={invalidStyle("email")}
 						type="email"
 						id="email"
 						name="email"
 						{...formik.getFieldProps("email")}
 					/>
-					{isInvalid("email") ? <p>{formik.errors.email}</p> : null}
+					<ValidationError
+						isInvalid={isInvalid("email")}
+						error={formik.errors.email}
+					/>
 				</div>
 				<div>
-					<label for="phone-number">Phone number</label>
+					<label htmlFor="phone-number">Phone number *</label>
 					<input
+						style={invalidStyle("phoneNumber")}
 						type="tel"
 						id="phone-number"
 						name="phone-number"
 						{...formik.getFieldProps("phoneNumber")}
 					/>
-					{isInvalid("phoneNumber") ? <p>{formik.errors.phoneNumber}</p> : null}
+					<ValidationError
+						isInvalid={isInvalid("phoneNumber")}
+						error={formik.errors.phoneNumber}
+					/>
 				</div>
 				<div>
-					<label for="num-people">Number of People</label>
+					<label htmlFor="num-people">Number of People</label>
 					<input
+						style={invalidStyle("numberOfPeople")}
 						type="number"
 						id="num-people"
 						name="number of people"
@@ -112,44 +131,60 @@ export default function BookingForm() {
 						min={1}
 						max={10}
 					/>
-					{isInvalid("numberOfPeople") ? (
-						<p>{formik.errors.numberOfPeople}</p>
-					) : null}
+					<ValidationError
+						isInvalid={isInvalid("numberOfPeople")}
+						error={formik.errors.numberOfPeople}
+					/>
 				</div>
 				<div>
-					<label for="date">Select Date</label>
+					<label htmlFor="date">Select Date</label>
 					<input
 						type="date"
 						id="date"
 						name="reservation date"
-						{...formik.getFieldProps("date")}
 						min={minDate}
 						max={maxDate}
+						{...formik.getFieldProps("date")}
+						onChange={(e) => {
+							formik.handleChange(e);
+							updateAvailableTimeComponent(e.target.value);
+						}}
 					/>
-					{isInvalid("date") ? <p>{formik.errors.date}</p> : null}
 				</div>
 				<div>
-					<label for="time">Select Time</label>
-					<select id="time" name="time">
-						<option>17:00</option>
-						<option>18:00</option>
-						<option>19:00</option>
-						<option>20:00</option>
-						<option>21:00</option>
-						<option>22:00</option>
+					<label htmlFor="time">Select Time</label>
+					<select
+						id="time"
+						name="time of reservation"
+						{...formik.getFieldProps("time")}
+					>
+						{availableTimeComponent}
 					</select>
-					{isInvalid("time") ? <p>{formik.errors.time}</p> : null}
 				</div>
 				<div>
-					<label for="ocasion">Ocasion</label>
-					<select id="ocasion" name="ocasion">
+					<label htmlFor="ocasion">Ocasion</label>
+					<select
+						id="ocasion"
+						name="choose ocasion"
+						{...formik.getFieldProps("ocasion")}
+					>
 						<option>None</option>
 						<option>Birthday</option>
 						<option>Anniversary</option>
 					</select>
-					{isInvalid("ocasion") ? <p>{formik.errors.ocasion}</p> : null}
 				</div>
-				<button type="submit" name="submit reservation">
+				<div id="notes">
+					<p id="">Fields marked with * are optional.</p>
+					<p>
+						Note: You cannot edit your reservation after submission. Please
+						double-check your answer before submitting.
+					</p>
+				</div>
+				<button
+					disabled={!formik.isValid}
+					type="submit"
+					name="submit reservation"
+				>
 					Make a Reservation
 				</button>
 			</form>
