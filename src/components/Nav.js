@@ -7,7 +7,7 @@ export default function Nav(props) {
 	const { orientation = "row" } = props;
 	const style = {
 		flexDirection: orientation,
-		alignItems: orientation ? "start" : "center",
+		alignItems: orientation === "row" ? "center" : "start",
 	};
 
 	const scrollToAbout = () => {
@@ -41,10 +41,10 @@ export default function Nav(props) {
 						<Link to="/booking">Reservations</Link>
 					</li>
 					<li>
-						<Link href="">Order Online</Link>
+						<Link href="/">Order Online</Link>
 					</li>
 					<li>
-						<Link href="">Login</Link>
+						<Link href="/">Login</Link>
 					</li>
 				</ul>
 			</nav>
