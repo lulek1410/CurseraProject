@@ -21,7 +21,7 @@ export default function Footer() {
 		<>
 			<footer>
 				<div id="logo-container">
-					<Link className="image-link" to="/" data-testid="image">
+					<Link className="image-link" to="/" data-testid="image-link">
 						<img id="footer-logo" src={logo} alt="logo" />
 					</Link>
 				</div>
