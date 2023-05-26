@@ -9,7 +9,7 @@ export default function Header() {
 	return (
 		<>
 			<header>
-				<Link className="image-link" to="/">
+				<Link className="image-link" to="/" data-testid="image-link">
 					<img id="logo" src={logo} alt="logo" />
 				</Link>
 				<Nav />
