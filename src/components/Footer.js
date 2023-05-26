@@ -6,9 +6,9 @@ import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
 const contactInfo = [
-	"2345 Maldove Way, Chicago Illinois",
-	"(532)-659-8914",
-	"info@littlelemon.com",
+	{ name: "address", value: "2345 Maldove Way, Chicago Illinois" },
+	{ name: "phone-number", value: "(532)-659-8914" },
+	{ name: "email", value: "info@littlelemon.com" },
 ];
 const socialMedia = [
 	{ name: "Facebook", link: "https://www.facebook.com" },
@@ -21,7 +21,7 @@ export default function Footer() {
 		<>
 			<footer>
 				<div id="logo-container">
-					<Link className="image-link" to="/">
+					<Link className="image-link" to="/" data-testid="image-link">
 						<img id="footer-logo" src={logo} alt="logo" />
 					</Link>
 				</div>
@@ -34,8 +34,12 @@ export default function Footer() {
 						<h3>Contact</h3>
 						<nav>
 							<ul>
-								{contactInfo.map((name) => {
-									return <li key={name}>{name}</li>;
+								{contactInfo.map(({ name, value }) => {
+									return (
+										<li key={name} data-testid={name}>
+											{value}
+										</li>
+									);
 								})}
 							</ul>
 						</nav>

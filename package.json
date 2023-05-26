@@ -7,6 +7,7 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
+		"@types/jest": "^29.5.1",
 		"formik": "^2.2.9",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -20,7 +21,7 @@
 		"start": "craco start",
 		"build": "craco build",
 		"test": "craco test",
-		"eject": "react-scripts eject"
+		"eject": "craco eject"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -39,5 +40,13 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"jest": {
+		"moduleNameMapper": {
+			"^@components_s/(.+)": "<rootDir>/src/styles/components/$1",
+			"^@booking_s/(.+)": "<rootDir>/src/styles/components/pages/booking/$1",
+			"^@home_s/(.+)": "<rootDir>/src/styles/components/pages/home/$1",
+			"^@assert/(.+)": "<rootDir>/src/assets/$1"
+		}
 	}
 }
