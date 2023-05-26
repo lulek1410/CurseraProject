@@ -21,13 +21,13 @@ export default function Footer() {
 		<>
 			<footer>
 				<div id="logo-container">
-					<Link className="image-link" to="/" data-testid="image-link">
+					<Link className="image-link" to="/" data-testid="image">
 						<img id="footer-logo" src={logo} alt="logo" />
 					</Link>
 				</div>
 				<div>
 					<h3>Navigation</h3>
-					<Nav orientation="column" gap="0.5rem" />
+					<Nav orientation="column" />
 				</div>
 				<div id="contact-social-container">
 					<div>

@@ -1,12 +1,12 @@
 import "@components_s/Nav.css";
 
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Nav(props) {
-	const { orientation, gap } = props;
+	const { orientation = "row" } = props;
 	const style = {
 		flexDirection: orientation,
-		gap: gap,
 		alignItems: orientation ? "start" : "center",
 	};
 
@@ -51,3 +51,7 @@ export default function Nav(props) {
 		</>
 	);
 }
+
+Nav.propTypes = {
+	orientation: PropTypes.string,
+};
