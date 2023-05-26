@@ -1,8 +1,11 @@
 import "@home_s/sections/Hero.css";
 
 import restaurantFood from "@assert/restaurantfood.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<section id="hero" className="restaurant-description">
@@ -14,7 +17,14 @@ export default function Hero() {
 						Street in Chicago, Illinois. We focus on traditionsl recipes served
 						with a modern twist.
 					</p>
-					<button name="reservation">Reserve a Table</button>
+					<button
+						name="reservation"
+						onClick={() => {
+							navigate("/booking");
+						}}
+					>
+						Reserve a Table
+					</button>
 				</div>
 				<img src={restaurantFood} alt="food" />
 			</section>
