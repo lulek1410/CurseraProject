@@ -9,7 +9,7 @@ export default function About() {
 			<div>
 				<h1 className="color-main-y">Little Lemon</h1>
 				<h2 className="color-main-y">Chicago</h2>
-				<p>
+				<p data-testid="about-desctiption">
 					Little Lemon is a charming neighborhood bistro that serves simple food
 					and classic coctails in a lively but casual environment. The
 					restaurant features a locally-sourced menu with daily specials
