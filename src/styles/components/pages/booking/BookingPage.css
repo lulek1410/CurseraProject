@@ -3,7 +3,7 @@
 	background-image: url("../../../../assets/restaurant.jpg");
 	background-position: 0 -80%;
 	background-color: var(--color-main-g);
-	margin: 0 calc(var(--spacing) * -1);
+	margin: 0 calc(var(--horizontal-margin) * -1);
 	padding: 5rem 0;
 	color: var(--color-main-y);
 }

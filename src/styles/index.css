@@ -19,11 +19,13 @@ html {
 
 html,
 section {
-	font-size: calc(15px + 0.390625vw);
+	font-size: 14px;
 }
 
 body {
-	padding: calc(var(--spacing) * 2) var(--spacing) 0 var(--spacing);
+	--horizontal-margin: 14vw;
+	padding: calc(var(--spacing) * 2) var(--horizontal-margin) 0
+		var(--horizontal-margin);
 	font-family: Karla;
 }
 

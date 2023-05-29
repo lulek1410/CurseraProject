@@ -1,6 +1,6 @@
 #hero {
 	--margin: 5vw;
-	padding: var(--spacing) 0;
+	padding: var(--spacing) var(--spacing);
 }
 
 #hero > div {

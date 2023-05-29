@@ -4,7 +4,7 @@ footer {
 	justify-content: center;
 	padding-top: var(--spacing);
 	padding: var(--spacing);
-	margin: 0 calc(var(--spacing) * -1);
+	margin: 0 calc(var(--horizontal-margin) * -1);
 	gap: 5vw;
 	background-color: #fbdabb;
 }
