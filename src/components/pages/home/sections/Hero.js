@@ -12,7 +12,7 @@ export default function Hero() {
 				<div>
 					<h1 className="color-main-y">Little Lemon</h1>
 					<h2 className="color-main-y">Chicago</h2>
-					<p>
+					<p data-testid="hero-description">
 						We are a family owned Mediterranean restaurant. Located on Maldove
 						Street in Chicago, Illinois. We focus on traditionsl recipes served
 						with a modern twist.
