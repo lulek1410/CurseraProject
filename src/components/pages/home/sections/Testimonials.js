@@ -31,7 +31,7 @@ const opinions = [
 
 export default function Testimonials() {
 	return (
-		<section id="testimonials">
+		<section id="testimonials" aria-label="testimonials">
 			<h2>Testimonials</h2>
 			{opinions.map((opinion) => {
 				return (
