@@ -5,7 +5,7 @@ export default function Dish(props) {
 
 	return (
 		<>
-			<div id="dish">
+			<div id="dish" data-testid="dish">
 				<div>
 					<img src={image} alt="dish" loading="lazy" />
 					<div className="info">
