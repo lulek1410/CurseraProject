@@ -9,7 +9,7 @@ describe("Testimonial", () => {
 		render(<Testimonial userName={userName} text={text} />);
 	};
 
-	test("a", () => {
+	test("everything displays", () => {
 		renderComponent();
 
 		const starsImage = screen.getByRole("img");
