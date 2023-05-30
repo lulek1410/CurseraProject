@@ -3,7 +3,7 @@ import "@booking_s/sections/BookingForm.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { minDate, maxDate } from "../scripts/DateLimits";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function BookingForm(props) {
 	const { availableTime, updateTime, handleSubmit } = props;
@@ -13,25 +13,24 @@ export default function BookingForm(props) {
 		email: Yup.string().email("Invalid email!").required("Required"),
 		phoneNumber: Yup.string().matches(
 			/^(([+][0-9]{1,3})[ /-])?(([0-9]{1,3}[ /-]?){1,3})$/,
-			"Phone number not valid"
+			"Phone number not valid!"
 		),
-		numberOfPeople: Yup.number().max(10).min(1),
+		numberOfPeople: Yup.number().max(10).min(1).required("Required"),
 	});
 
-	const createTimeOptionsComponent = () => {
+	const createTimeOptionsComponent = useCallback(() => {
 		return availableTime.map((time) => {
 			return <option key={time}>{time}</option>;
 		});
-	};
+	}, [availableTime]);
 
 	const [availableTimeComponent, setAvailableTimeComponent] = useState(
 		createTimeOptionsComponent()
 	);
 
-	const updateAvailableTimeComponent = (value) => {
-		updateTime({ date: value });
+	useEffect(() => {
 		setAvailableTimeComponent(createTimeOptionsComponent());
-	};
+	}, [availableTime, createTimeOptionsComponent]);
 
 	const invalidStyle = (isInvalid) => {
 		return {
@@ -125,7 +124,7 @@ export default function BookingForm(props) {
 								max={maxDate}
 								onChange={(e) => {
 									handleChange(e);
-									updateAvailableTimeComponent(e.target.value);
+									updateTime({ date: e.target.value });
 								}}
 							/>
 						</div>
@@ -151,10 +150,7 @@ export default function BookingForm(props) {
 							</p>
 						</div>
 						<button
-							disabled={(function () {
-								console.log(isValid && dirty);
-								return !(isValid && dirty);
-							})()}
+							disabled={!(isValid && dirty)}
 							type="submit"
 							name="submit reservation"
 						>
