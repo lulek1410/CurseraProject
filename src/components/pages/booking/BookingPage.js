@@ -5,6 +5,10 @@ import fetchBookingData from "./scripts/BookingApi";
 import BookingForm from "./sections/BookingForm";
 
 export default function BookingPage() {
+	const handleSubmit = (values) => {
+		alert(JSON.stringify(values, null, 2));
+	};
+
 	const updateAvailableTime = (state, action) => {
 		const data = fetchBookingData(action.date);
 		return data;
@@ -20,7 +24,11 @@ export default function BookingPage() {
 			<div id="booking-title">
 				<h1>Reserve a table</h1>
 			</div>
-			<BookingForm availableTime={availableTime} updateTime={dispatch} />
+			<BookingForm
+				availableTime={availableTime}
+				updateTime={dispatch}
+				handleSubmit={handleSubmit}
+			/>
 		</main>
 	);
 }
