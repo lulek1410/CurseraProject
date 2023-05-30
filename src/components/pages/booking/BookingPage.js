@@ -10,8 +10,7 @@ export default function BookingPage() {
 	};
 
 	const updateAvailableTime = (state, action) => {
-		const data = fetchBookingData(action.date);
-		return data;
+		return fetchBookingData(action.date);
 	};
 
 	const [availableTime, dispatch] = useReducer(
