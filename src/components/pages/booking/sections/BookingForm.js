@@ -124,7 +124,7 @@ export default function BookingForm(props) {
 								max={maxDate}
 								onChange={(e) => {
 									handleChange(e);
-									updateTime({ date: e.target.value });
+									updateTime(e.target.value);
 								}}
 							/>
 						</div>
