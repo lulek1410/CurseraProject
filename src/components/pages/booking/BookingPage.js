@@ -1,20 +1,12 @@
 import { useReducer } from "react";
 import "@booking_s/BookingPage.css";
-import fetchBookingData from "./scripts/BookingApi";
+import { fetchBookingData, submitData } from "./scripts/BookingApi";
 
 import BookingForm from "./sections/BookingForm";
 
 export default function BookingPage() {
-	const handleSubmit = (values) => {
-		alert(JSON.stringify(values, null, 2));
-	};
-
-	const updateAvailableTime = (state, action) => {
-		return fetchBookingData(action.date);
-	};
-
 	const [availableTime, dispatch] = useReducer(
-		updateAvailableTime,
+		fetchBookingData,
 		fetchBookingData()
 	);
 
@@ -26,7 +18,7 @@ export default function BookingPage() {
 			<BookingForm
 				availableTime={availableTime}
 				updateTime={dispatch}
-				handleSubmit={handleSubmit}
+				handleSubmit={submitData}
 			/>
 		</main>
 	);
