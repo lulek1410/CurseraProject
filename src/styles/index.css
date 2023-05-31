@@ -31,12 +31,12 @@ body {
 
 @media (width <= 850px) {
 	body {
-		padding-top: 6rem;
+		padding-top: 6.2rem;
 	}
 }
 
 @media (width <= 390px) {
 	body {
-		padding-top: 7rem;
+		padding-top: 8rem;
 	}
 }
