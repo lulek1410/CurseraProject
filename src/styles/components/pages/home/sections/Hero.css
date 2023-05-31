@@ -10,7 +10,6 @@
 #hero img {
 	width: 40vw;
 	height: max(20vw, 30vh);
-	border-radius: var(--border-radius);
 	object-fit: cover;
 	margin: 0 var(--margin);
 }

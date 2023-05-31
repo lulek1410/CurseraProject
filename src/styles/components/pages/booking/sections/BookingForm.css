@@ -25,7 +25,6 @@ input {
 	outline: none;
 	padding: 0.2rem;
 	background-color: var(--color-secondary);
-	border-radius: 6px;
 }
 
 div + input {
@@ -33,7 +32,6 @@ div + input {
 }
 
 :is(#time, #ocasion) {
-	border-radius: 6px;
 	padding: 0.2rem;
 	border-color: var(--color-secondary);
 	background-color: var(--color-secondary);
