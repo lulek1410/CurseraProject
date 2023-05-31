@@ -97,7 +97,7 @@ describe("BookingForm", () => {
 		const selectDate = screen.getByLabelText("Select Date");
 		fireEvent.change(selectDate, { target: { value: "2023-07-30" } });
 		await waitFor(() => {
-			expect(updateTime).toBeCalledWith({ date: "2023-07-30" });
+			expect(updateTime).toBeCalledWith("2023-07-30");
 		});
 	});
 
@@ -123,7 +123,7 @@ describe("BookingForm", () => {
 		await event.type(numberOfPeople, "{backspace}2");
 		fireEvent.change(selectDate, { target: { value: "2023-05-27" } });
 		await waitFor(() => {
-			expect(updateTime).toBeCalledWith({ date: "2023-05-27" });
+			expect(updateTime).toBeCalledWith("2023-05-27");
 		});
 		await event.selectOptions(selectTime, ["17:00"]);
 		await event.selectOptions(ocasion, ["None"]);
