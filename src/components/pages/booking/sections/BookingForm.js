@@ -142,13 +142,13 @@ export default function BookingForm(props) {
 								<option>Anniversary</option>
 							</Field>
 						</div>
-						<div id="notes">
+						<small id="notes">
 							<p>Fields marked with * are optional.</p>
 							<p>
 								Note: You cannot edit your reservation after submission. Please
 								double-check your answer before submitting.
 							</p>
-						</div>
+						</small>
 						<button
 							disabled={!(isValid && dirty)}
 							type="submit"
