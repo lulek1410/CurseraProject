@@ -17,7 +17,8 @@ html {
 }
 
 html,
-section {
+section,
+button {
 	font-size: 16px;
 }
 
