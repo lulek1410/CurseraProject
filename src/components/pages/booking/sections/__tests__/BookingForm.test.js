@@ -2,6 +2,7 @@ import { screen, render, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import BookingForm from "../BookingForm";
+import { getFormFields } from "../../scripts/testCommon";
 
 describe("BookingForm", () => {
 	let availableTime = ["17:00", "19:00", "21:00"];
@@ -16,31 +17,6 @@ describe("BookingForm", () => {
 				handleSubmit={handleSubmitMock}
 			/>
 		);
-	};
-
-	const getFormFields = () => {
-		const firstName = screen.getByRole("textbox", { name: "First Name" });
-		const surname = screen.getByRole("textbox", { name: "Surname" });
-		const email = screen.getByRole("textbox", { name: "Email" });
-		const phoneNumber = screen.getByRole("textbox", { name: "Phone number *" });
-		const numberOfPeople = screen.getByRole("spinbutton", {
-			name: "Number of People",
-		});
-		const selectDate = screen.getByLabelText("Select Date");
-		const selectTime = screen.getByRole("combobox", { name: "Select Time" });
-		const ocasion = screen.getByRole("combobox", { name: "Ocasion" });
-		const submit = screen.getByRole("button", { name: "Make a Reservation" });
-		return [
-			firstName,
-			surname,
-			email,
-			phoneNumber,
-			numberOfPeople,
-			selectDate,
-			selectTime,
-			ocasion,
-			submit,
-		];
 	};
 
 	test("everything displays", () => {
@@ -98,52 +74,6 @@ describe("BookingForm", () => {
 		fireEvent.change(selectDate, { target: { value: "2023-07-30" } });
 		await waitFor(() => {
 			expect(updateTime).toBeCalledWith("2023-07-30");
-		});
-	});
-
-	test("form filled correctly", async () => {
-		renderComponent();
-		const [
-			firstName,
-			surname,
-			email,
-			phoneNumber,
-			numberOfPeople,
-			selectDate,
-			selectTime,
-			ocasion,
-			submit,
-		] = getFormFields();
-		const event = userEvent.setup();
-
-		await event.type(firstName, "John");
-		await event.type(surname, "Doe");
-		await event.type(email, "john.doe@someemail.com");
-		await event.type(phoneNumber, "123 123 123");
-		await event.type(numberOfPeople, "{backspace}2");
-		fireEvent.change(selectDate, { target: { value: "2023-05-27" } });
-		await waitFor(() => {
-			expect(updateTime).toBeCalledWith("2023-05-27");
-		});
-		await event.selectOptions(selectTime, ["17:00"]);
-		await event.selectOptions(ocasion, ["None"]);
-		await waitFor(() => {
-			expect(submit).not.toBeDisabled();
-		});
-
-		userEvent.click(submit);
-
-		await waitFor(() => {
-			expect(handleSubmitMock).toHaveBeenCalledWith({
-				date: "2023-05-27",
-				email: "john.doe@someemail.com",
-				name: "John",
-				numberOfPeople: 2,
-				ocasion: "None",
-				phoneNumber: "123 123 123",
-				surname: "Doe",
-				time: "17:00",
-			});
 		});
 	});
 

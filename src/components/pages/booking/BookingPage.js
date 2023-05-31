@@ -1,10 +1,20 @@
-import { useReducer } from "react";
 import "@booking_s/BookingPage.css";
-import { fetchBookingData, submitData } from "./scripts/BookingApi";
 
+import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { fetchBookingData, submitData } from "./scripts/BookingApi";
 import BookingForm from "./sections/BookingForm";
 
 export default function BookingPage() {
+	const navigate = useNavigate();
+
+	const handleSubmit = (data) => {
+		if (submitData(data)) {
+			navigate("/booking/confirmation");
+		}
+	};
+
 	const [availableTime, dispatch] = useReducer(
 		fetchBookingData,
 		fetchBookingData()
@@ -18,7 +28,7 @@ export default function BookingPage() {
 			<BookingForm
 				availableTime={availableTime}
 				updateTime={dispatch}
-				handleSubmit={submitData}
+				handleSubmit={handleSubmit}
 			/>
 		</main>
 	);
