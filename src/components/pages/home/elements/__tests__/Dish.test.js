@@ -1,5 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import Dish from "../Dish";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Dish", () => {
 	const dishName = "salad";
@@ -9,12 +10,14 @@ describe("Dish", () => {
 
 	const renderComponent = () => {
 		render(
-			<Dish
-				dishName={dishName}
-				description={description}
-				price={price}
-				image={image}
-			/>
+			<MemoryRouter>
+				<Dish
+					dishName={dishName}
+					description={description}
+					price={price}
+					image={image}
+				/>
+			</MemoryRouter>
 		);
 	};
 

@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import Specials from "../Specials";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Specials", () => {
 	const renderComponent = () => {
-		render(<Specials />);
+		render(
+			<MemoryRouter>
+				<Specials />
+			</MemoryRouter>
+		);
 	};
 
 	test("everything displays", () => {

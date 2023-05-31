@@ -4,7 +4,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomePage from "./components/pages/home/HomePage";
 import BookingPage from "./components/pages/booking/BookingPage";
-import { Children } from "react";
+import Confirmation from "./components/pages/booking/ConfirmationPage";
+import ToDo from "./components/pages/todo/ToDo";
 
 const Layout = () => {
 	return (
@@ -27,6 +28,22 @@ const router = createBrowserRouter([
 			{
 				path: "/booking",
 				element: <BookingPage />,
+			},
+			{
+				path: "/booking/confirmation",
+				element: <Confirmation />,
+			},
+			{
+				path: "/menu",
+				element: <ToDo />,
+			},
+			{
+				path: "/order",
+				element: <ToDo />,
+			},
+			{
+				path: "/login",
+				element: <ToDo />,
 			},
 		],
 	},

@@ -41,11 +41,11 @@ describe("Hero", () => {
 		expect(foodImage).toHaveAttribute("src", "restaurantfood.jpg");
 	});
 
-	test("reservation button click", () => {
+	test("reservation button click", async () => {
 		renderComponent();
 
 		const reservationButton = screen.getByRole("button");
-		userEvent.click(reservationButton);
+		await userEvent.click(reservationButton);
 		expect(navigate).toBeCalledTimes(1);
 		expect(navigate).toBeCalledWith("/booking");
 	});

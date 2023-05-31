@@ -1,7 +1,10 @@
 import "@home_s/elements/Dish.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Dish(props) {
 	const { dishName, description, price, image } = props;
+
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -14,7 +17,13 @@ export default function Dish(props) {
 					</div>
 					<p>{description}</p>
 				</div>
-				<button>Order for delivery</button>
+				<button
+					onClick={() => {
+						navigate("/order");
+					}}
+				>
+					Order for delivery
+				</button>
 			</div>
 		</>
 	);

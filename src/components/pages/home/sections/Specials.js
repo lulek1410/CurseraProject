@@ -5,6 +5,7 @@ import bruschetta from "@assert/bruschetta.svg";
 import lemonDessert from "@assert/lemon dessert.jpg";
 
 import Dish from "../elements/Dish";
+import { useNavigate } from "react-router-dom";
 
 const specialDishes = [
 	{
@@ -31,12 +32,21 @@ const specialDishes = [
 ];
 
 export default function Specials() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<section id="specials">
 				<div id="title">
 					<h2>Specials</h2>
-					<button name="Online menu">Online Menu</button>
+					<button
+						name="Online menu"
+						onClick={() => {
+							navigate("/menu");
+						}}
+					>
+						Online Menu
+					</button>
 				</div>
 				<div id="dishes">
 					{specialDishes.map((dish) => {

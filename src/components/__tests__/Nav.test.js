@@ -14,10 +14,10 @@ describe("Footer", () => {
 	test.each([
 		{ name: "Home", link: "/" },
 		{ name: "About", link: "/#about" },
-		{ name: "Menu", link: "/" },
+		{ name: "Menu", link: "/menu" },
 		{ name: "Reservations", link: "/booking" },
-		{ name: "Order Online", link: "/" },
-		{ name: "Login", link: "/" },
+		{ name: "Order Online", link: "/order" },
+		{ name: "Login", link: "/login" },
 	])("logo", ({ name, link }) => {
 		renderComponent();
 

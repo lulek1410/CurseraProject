@@ -35,16 +35,16 @@ export default function Nav(props) {
 						</a>
 					</li>
 					<li>
-						<Link to="/">Menu</Link>
+						<Link to="/menu">Menu</Link>
 					</li>
 					<li>
 						<Link to="/booking">Reservations</Link>
 					</li>
 					<li>
-						<Link href="/">Order Online</Link>
+						<Link to="/order">Order Online</Link>
 					</li>
 					<li>
-						<Link href="/">Login</Link>
+						<Link to="/login">Login</Link>
 					</li>
 				</ul>
 			</nav>
