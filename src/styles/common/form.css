@@ -5,6 +5,7 @@ form {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	margin: auto;
 	margin: var(--spacing) 0;
 }
 
