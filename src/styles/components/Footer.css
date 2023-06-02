@@ -1,17 +1,19 @@
 footer {
-	position: relative;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: flex;
 	justify-content: center;
 	padding-top: var(--spacing);
 	padding: var(--spacing);
-	margin: 0 calc(var(--horizontal-margin) * -1);
 	gap: 5vw;
 	background-color: #fbdabb;
+	height: var(--footer-height);
 }
 
 #contact-social-container {
 	display: flex;
-	justify-content: center;
 	gap: 5vw;
 }
 
@@ -39,11 +41,19 @@ ul {
 		flex-direction: column;
 		gap: 4vw;
 	}
+
+	:root {
+		--footer-height: 340px;
+	}
 }
 
 @media (width < 420px) {
 	footer {
 		flex-direction: column;
+	}
+
+	:root {
+		--footer-height: 720px;
 	}
 
 	#logo-container {

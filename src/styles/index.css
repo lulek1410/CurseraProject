@@ -1,6 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 :root {
@@ -10,10 +11,13 @@
 	--color-secondary-text: #333333;
 	--spacing: 2rem;
 	--spacing-small: 1rem;
+	--footer-height: 290px;
+	--header-height: calc(var(--spacing) * 2);
 }
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
 }
 
 html,
@@ -23,28 +27,10 @@ button {
 }
 
 body {
+	position: relative;
 	--horizontal-margin: 14vw;
-	padding: calc(var(--spacing) * 2) var(--horizontal-margin) 0
+	padding: var(--header-height) var(--horizontal-margin) var(--footer-height)
 		var(--horizontal-margin);
 	font-family: Karla;
+	min-height: 100%;
 }
-
-@media (width <= 850px) {
-	body {
-		padding-top: 6.2rem;
-	}
-}
-
-@media (width <= 390px) {
-	body {
-		padding-top: 8rem;
-	}
-}
-
-/* @media (width >= 1920px) {
-	html,
-	section,
-	button {
-		font-size: calc(15px + 0.390625vw);
-	}
-} */
