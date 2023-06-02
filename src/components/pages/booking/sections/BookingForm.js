@@ -1,5 +1,3 @@
-import "@booking_s/sections/BookingForm.css";
-
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { minDate, maxDate } from "../scripts/DateLimits";
@@ -67,7 +65,11 @@ export default function BookingForm(props) {
 								name="name"
 								type="text"
 							/>
-							<ErrorMessage name="name" className="validation-error" />
+							<ErrorMessage
+								name="name"
+								component="div"
+								className="validation-error"
+							/>
 						</div>
 						<div>
 							<label htmlFor="surname">Surname</label>
@@ -77,7 +79,11 @@ export default function BookingForm(props) {
 								name="surname"
 								type="text"
 							/>
-							<ErrorMessage name="surname" className="validation-error" />
+							<ErrorMessage
+								name="surname"
+								component="div"
+								className="validation-error"
+							/>
 						</div>
 						<div>
 							<label htmlFor="email">Email</label>
@@ -87,7 +93,11 @@ export default function BookingForm(props) {
 								name="email"
 								type="email"
 							/>
-							<ErrorMessage name="email" className="validation-error" />
+							<ErrorMessage
+								name="email"
+								component="div"
+								className="validation-error"
+							/>
 						</div>
 						<div>
 							<label htmlFor="phone-number">Phone number *</label>
@@ -97,7 +107,11 @@ export default function BookingForm(props) {
 								name="phoneNumber"
 								type="tel"
 							/>
-							<ErrorMessage name="phoneNumber" className="validation-error" />
+							<ErrorMessage
+								name="phoneNumber"
+								component="div"
+								className="validation-error"
+							/>
 						</div>
 						<div>
 							<label htmlFor="num-people">Number of People</label>
@@ -111,6 +125,7 @@ export default function BookingForm(props) {
 							/>
 							<ErrorMessage
 								name="numberOfPeople"
+								component="div"
 								className="validation-error"
 							/>
 						</div>
